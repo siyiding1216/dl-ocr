@@ -9,14 +9,14 @@ filter_map = [0,1,2,3;
 np=0; ipts=struct;
 
 % Build the response map
-responseMap=build_response_map(I);
+response_map=build_response_map(I);
 
 % Find the maxima acrros scale and space
 for s = 1:max_scales
     for i = 1:2
-        b = responseMap{filter_map(s,i)};
-        m = responseMap{filter_map(s,i+1)};
-        t = responseMap{filter_map(s,i+2)};
+        b = response_map{filter_map(s,i)};
+        m = response_map{filter_map(s,i+1)};
+        t = response_map{filter_map(s,i+2)};
 
         % loop over middle response layer at density of the most
         % sparse layer (always top), to find maxima across scale and space
